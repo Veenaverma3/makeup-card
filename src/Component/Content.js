@@ -5,7 +5,7 @@ import imag from "./v31.png";
 export const Content = () => {
   return (
     < >
-      <div className=" flex justify-between justify-evenly content-center  rounded-md absolute bg-blue-700 h-[600px] w-[99%] ml-4 ">
+      <div className=" flex justify-between justify-evenly content-center  rounded-md relative bg-blue-700 h-[600px] w-[99%] ml-4 ">
         <div className="m-auto relative ">
          <div className=" relative "> <img src={img} className="h-[350px] rounded-md bg-cover"/></div>
       

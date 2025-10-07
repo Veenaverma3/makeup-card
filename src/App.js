@@ -31,6 +31,10 @@ const FestivalPackages = () => {
       color: "from-orange-500 to-red-500",
       badge: "Most Popular",
     },
+  ];
+
+  // Hair Spa & Nail Glam grouped together
+  const hairAndNailPackages = [
     {
       title: "Hair Spa",
       price: 250,
@@ -96,6 +100,34 @@ const FestivalPackages = () => {
             </div>
           </div>
         ))}
+
+        {/* 💇‍♀️ Hair Spa & Nail Glam Group */}
+        <div className="flex flex-col gap-6">
+          {hairAndNailPackages.map((pkg, idx) => (
+            <div
+              key={idx}
+              className={`flex-1 relative p-6 rounded-2xl bg-gradient-to-br ${pkg.color} shadow-xl hover:scale-105 transition-all duration-500`}
+            >
+              <h2 className="text-lg font-bold mb-3">{pkg.title}</h2>
+              <ul className="space-y-1 text-sm mb-4">
+                {pkg.services.map((service, sIdx) => (
+                  <li key={sIdx} className="flex items-center gap-2">
+                    <Sparkles className="w-3 h-3 text-yellow-300" />
+                    {service}
+                  </li>
+                ))}
+              </ul>
+              <div className="flex items-center justify-between mt-2">
+                <span className="text-white font-extrabold text-xl">
+                  ₹{pkg.price}
+                </span>
+                <button className="bg-white text-pink-600 font-bold text-xs px-3 py-1.5 rounded-full hover:bg-pink-100 transition">
+                  Book Now
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* 💬 Contact Section */}
@@ -110,15 +142,14 @@ const FestivalPackages = () => {
           >
             <Phone className="w-4 h-4" /> Call Now
           </a>
-         <a
-  href="https://wa.me/917495029608?text=Hi%20Poonam%20Verma!%20I%20want%20to%20know%20about%20your%20festival%20beauty%20packages."
-  target="_blank"
-  rel="noopener noreferrer"
-  className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-4 py-2 rounded-full transition"
->
-  <MessageCircle className="w-4 h-4" /> WhatsApp
-</a>
-
+          <a
+            href="https://wa.me/917495029608?text=Hi%20Poonam%20Verma!%20I%20want%20to%20know%20about%20your%20festival%20beauty%20packages."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-4 py-2 rounded-full transition"
+          >
+            <MessageCircle className="w-4 h-4" /> WhatsApp
+          </a>
         </div>
         <p className="text-gray-400 text-xs mt-3">
           Limited time offer — Shine bright this festive season ✨

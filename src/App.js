@@ -1,9 +1,10 @@
  import React from "react";
-import { Sparkles, Scissors, Star, Phone } from "lucide-react";
+import { Sparkles, Scissors, Star, Phone, MessageCircle } from "lucide-react";
 
-function App() {
+const FestivalPackages = () => {
   const packages = [
     {
+      title: "Glow Essentials",
       price: 399,
       services: [
         "Clean-up",
@@ -13,8 +14,10 @@ function App() {
         "Forehead",
         "Upper Lips",
       ],
+      color: "from-pink-500 to-rose-500",
     },
     {
+      title: "Luxury Radiance",
       price: 599,
       services: [
         "Facial",
@@ -25,102 +28,104 @@ function App() {
         "Forehead",
         "Upper Lips",
       ],
-      badge: "HOT",
+      color: "from-orange-500 to-red-500",
+      badge: "Most Popular",
     },
     {
+      title: "Hair Spa",
       price: 250,
-      services: ["Hair Spa"],
+      services: ["Relaxing Hair Spa + Massage"],
+      color: "from-purple-500 to-pink-400",
     },
     {
+      title: "Nail Glam",
       price: 450,
-      services: ["Nail Extension"],
+      services: ["Nail Extension with Art Design"],
+      color: "from-rose-500 to-pink-500",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-black/95 p-4 flex justify-center items-center">
-      <div className="w-full max-w-md">
-        {/* 🌸 Header Section */}
-        <div className="bg-gradient-to-r from-pink-600 via-red-600 to-orange-600 rounded-2xl p-5 shadow-lg mb-6 text-center">
-          <div className="flex items-center justify-center gap-2 mb-1">
-            <Star className="w-4 h-4 text-yellow-300 fill-yellow-300" />
-            <h1 className="text-lg font-extrabold text-white tracking-wide uppercase">
-              Karwa Chauth & Diwali
-            </h1>
-            <Star className="w-4 h-4 text-yellow-300 fill-yellow-300" />
-          </div>
-          <p className="text-white/90 text-xs font-semibold mb-3">
-            Festival Special Packages
-          </p>
-          <div className="inline-flex items-center gap-1 bg-white text-pink-600 px-3 py-1 rounded-full font-bold text-[10px] shadow-md">
-            <Scissors className="w-3 h-3" />
-            Free Haircut on Any Service
-          </div>
+    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-black to-gray-900 text-white py-12 px-4">
+      {/* 🌸 Hero Section */}
+      <div className="text-center mb-12">
+        <div className="flex items-center justify-center gap-2 mb-2">
+          <Star className="text-yellow-400 w-5 h-5 fill-yellow-400" />
+          <h1 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-pink-500 via-red-500 to-orange-400 bg-clip-text text-transparent">
+            Karwa Chauth & Diwali Beauty Offers
+          </h1>
+          <Star className="text-yellow-400 w-5 h-5 fill-yellow-400" />
         </div>
+        <p className="text-sm text-gray-300 mb-4">
+          Celebrate your glow this festive season with our exclusive packages!
+        </p>
+        <div className="inline-flex items-center bg-pink-600/20 text-pink-400 border border-pink-500 rounded-full px-4 py-1 text-xs font-semibold tracking-wide">
+          <Scissors className="w-3 h-3 mr-1" />
+          Free Haircut with Any Package
+        </div>
+      </div>
 
-        {/* 💅 Packages Section */}
-        <div className="space-y-3">
-          {packages.map((pkg, index) => (
-            <div
-              key={index}
-              className="relative bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300"
-            >
-              {pkg.badge && (
-                <div className="absolute top-2 -right-8 rotate-45 bg-red-500 text-white text-[10px] font-bold py-0.5 px-8 shadow-md">
-                  {pkg.badge}
-                </div>
-              )}
-
-              <div className="flex flex-col sm:flex-row items-stretch">
-                {/* 💰 Price Section */}
-                <div className="bg-gradient-to-br from-pink-500 to-orange-500 px-4 py-3 flex flex-col justify-center items-center text-white sm:min-w-[90px]">
-                  <span className="text-xs font-semibold opacity-90">₹</span>
-                  <span className="text-2xl font-extrabold leading-none">
-                    {pkg.price}
-                  </span>
-                </div>
-
-                {/* 🧴 Services Section */}
-                <div className="flex-1 p-3">
-                  <ul className="space-y-1">
-                    {pkg.services.map((service, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-center gap-1.5 text-[11px] text-gray-700"
-                      >
-                        <Sparkles className="w-2.5 h-2.5 text-orange-500" />
-                        {service}
-                      </li>
-                    ))}
-                    <li className="flex items-center gap-1.5 text-[11px] pt-1 border-t border-gray-200">
-                      <Scissors className="w-2.5 h-2.5 text-green-600" />
-                      <span className="text-green-700 font-semibold">
-                        Free Haircut
-                      </span>
-                    </li>
-                  </ul>
-                </div>
+      {/* 💖 Packages Section */}
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {packages.map((pkg, idx) => (
+          <div
+            key={idx}
+            className={`relative p-6 rounded-2xl bg-gradient-to-br ${pkg.color} shadow-xl hover:scale-105 transition-all duration-500`}
+          >
+            {pkg.badge && (
+              <div className="absolute top-3 right-3 bg-yellow-400 text-black text-[10px] font-bold px-3 py-1 rounded-full shadow">
+                {pkg.badge}
               </div>
+            )}
+            <h2 className="text-lg font-bold mb-3">{pkg.title}</h2>
+            <ul className="space-y-1 text-sm mb-4">
+              {pkg.services.map((service, sIdx) => (
+                <li key={sIdx} className="flex items-center gap-2">
+                  <Sparkles className="w-3 h-3 text-yellow-300" />
+                  {service}
+                </li>
+              ))}
+            </ul>
+            <div className="flex items-center justify-between mt-2">
+              <span className="text-white font-extrabold text-xl">
+                ₹{pkg.price}
+              </span>
+              <button className="bg-white text-pink-600 font-bold text-xs px-3 py-1.5 rounded-full hover:bg-pink-100 transition">
+                Book Now
+              </button>
             </div>
-          ))}
-        </div>
-
-        {/* 🕓 Footer Section */}
-        <div className="mt-6 text-center space-y-1">
-          <p className="text-pink-400 text-sm font-semibold">
-            Poonam Verma Makeup Studio
-          </p>
-          <div className="flex items-center justify-center gap-1 text-gray-300 text-xs">
-            <Phone className="w-3 h-3 text-pink-400" />
-            <span>Contact: 7495029608</span>
           </div>
-          <p className="text-gray-500 text-[10px] mt-1">
-            Limited-time offer — celebrate the festivals with grace & glow!
-          </p>
+        ))}
+      </div>
+
+      {/* 💬 Contact Section */}
+      <div className="mt-12 text-center">
+        <h3 className="text-lg font-bold text-pink-400">
+          Poonam Verma Makeup Studio
+        </h3>
+        <div className="flex justify-center items-center gap-4 mt-3">
+          <a
+            href="tel:7495029608"
+            className="flex items-center gap-2 bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold px-4 py-2 rounded-full transition"
+          >
+            <Phone className="w-4 h-4" /> Call Now
+          </a>
+         <a
+  href="https://wa.me/917495029608?text=Hi%20Poonam%20Verma!%20I%20want%20to%20know%20about%20your%20festival%20beauty%20packages."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-4 py-2 rounded-full transition"
+>
+  <MessageCircle className="w-4 h-4" /> WhatsApp
+</a>
+
         </div>
+        <p className="text-gray-400 text-xs mt-3">
+          Limited time offer — Shine bright this festive season ✨
+        </p>
       </div>
     </div>
   );
-}
+};
 
-export default App;
+export default FestivalPackages;

@@ -1,5 +1,5 @@
  import React from "react";
-import { Sparkles, Scissors, Star } from "lucide-react";
+import { Sparkles, Scissors, Star, Phone } from "lucide-react";
 
 function App() {
   const packages = [
@@ -105,9 +105,16 @@ function App() {
           ))}
         </div>
 
-        {/* 🕓 Footer Note */}
-        <div className="mt-4 text-center">
-          <p className="text-gray-500 text-[10px]">
+        {/* 🕓 Footer Section */}
+        <div className="mt-6 text-center space-y-1">
+          <p className="text-pink-400 text-sm font-semibold">
+            Poonam Verma Makeup Studio
+          </p>
+          <div className="flex items-center justify-center gap-1 text-gray-300 text-xs">
+            <Phone className="w-3 h-3 text-pink-400" />
+            <span>Contact: 7495029608</span>
+          </div>
+          <p className="text-gray-500 text-[10px] mt-1">
             Limited-time offer — celebrate the festivals with grace & glow!
           </p>
         </div>

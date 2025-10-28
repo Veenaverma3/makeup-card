@@ -49,7 +49,7 @@ export default function Bridal() {
         <h2 className="text-3xl sm:text-5xl font-extrabold mb-4 drop-shadow-lg">
           Pre-Bridal Glow Package
         </h2>
-        <p className="text-sm sm:text-base text-rose-100 mb-6 max-w-2xl">
+        <p className="text-sm sm:text-base text-rose-100 max-w-2xl">
           Everything you need to look radiant and confident on your big day ✨
         </p>
 

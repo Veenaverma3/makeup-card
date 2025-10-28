@@ -46,17 +46,17 @@ export default function Bridal() {
       {/* 💫 Content on Image */}
       <div className="relative z-10 text-center text-white p-6 sm:p-10 flex flex-col items-center justify-center">
         {/* 🌸 Header */}
-        <h2 className="text-3xl sm:text-5xl font-extrabold mb-4 drop-shadow-lg">
+        <h2 className="text-3xl sm:text-5xl font-bold mb-1 drop-shadow-lg">
           Pre-Bridal Glow Package
         </h2>
-        <p className="text-sm sm:text-base text-rose-100 max-w-2xl">
+        <p className="text-sm mb-2 sm:text-base text-rose-100 max-w-2xl">
           Everything you need to look radiant and confident on your big day ✨
         </p>
 
         {/* 💖 Price Tag */}
-        <div className="mb-8  px-6 py-4 rounded-2xl border border-rose-200 shadow-md inline-block">
+        <div className="mb-2 px-4 py-2 rounded-2xl border border-rose-200 shadow-md inline-block">
           <span className="block text-rose-100 text-sm mb-1">Special Price</span>
-          <span className="block text-3xl sm:text-4xl font-bold text-white">
+          <span className="block text-2xl sm:text-3xl font-bold text-white">
             ₹3,000
           </span>
           <span className="block text-green-300 mt-1 text-sm font-medium">
@@ -65,11 +65,11 @@ export default function Bridal() {
         </div>
 
         {/* 🌷 Services */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 w-auto max-w-5xl mb-2">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group p-5  rounded-2xl border border-rose-200/40 shadow hover:shadow-lg transition-all duration-300 text-left"
+              className="group p-4  rounded-2xl border border-rose-200/40 shadow hover:shadow-lg transition-all duration-300 text-left"
             >
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-rose-200/20 rounded-full group-hover:bg-rose-300/30 transition-colors duration-300">
